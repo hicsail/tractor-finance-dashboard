@@ -1,9 +1,9 @@
-import { ListItemButton, ListItemIcon, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-import { RootState } from "../../redux/store";
-import { RouteType } from "../../routes/appRoutes";
-import { colors, fontStyles } from "../../styles/styles";
-import { useSelector } from "react-redux";
+import { ListItemButton, ListItemIcon, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { RootState } from '../../redux/store';
+import { RouteType } from '../../routes/appRoutes';
+import { colors, fontStyles } from '../../styles/styles';
+import { useSelector } from 'react-redux';
 
 type Props = {
   item: RouteType;
@@ -17,20 +17,20 @@ const SidebarItem = ({ item }: Props) => {
       component={Link}
       to={item.path}
       sx={{
-        "&: hover": {
-          backgroundColor: colors.primary,
+        '&: hover': {
+          backgroundColor: colors.primary
         },
-        paddingY: "12px",
-        paddingX: "24px",
-        height: "50px",
-        marginBottom: "25px",
+        paddingY: '12px',
+        paddingX: '24px',
+        height: '50px',
+        marginBottom: '25px',
         borderLeft: appState === item.state ? 3 : 0,
-        borderColor: colors.primary,
+        borderColor: colors.primary
       }}
     >
       <ListItemIcon
         sx={{
-          color: appState === item.state ? colors.primary : colors.black,
+          color: appState === item.state ? colors.primary : colors.black
         }}
       >
         {item.sidebarProps.icon && item.sidebarProps.icon}
@@ -38,8 +38,8 @@ const SidebarItem = ({ item }: Props) => {
       <Typography
         style={{
           ...fontStyles.avenirRegular,
-          fontSize: "16px",
-          color: appState === item.state ? colors.primary : colors.black,
+          fontSize: '16px',
+          color: appState === item.state ? colors.primary : colors.black
         }}
       >
         {item.sidebarProps.displayText}

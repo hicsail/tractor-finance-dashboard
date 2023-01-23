@@ -1,19 +1,14 @@
-import { useRef } from "react";
-import { Map, Source, Layer } from "react-map-gl";
+import { useRef } from 'react';
+import { Map, Source, Layer } from 'react-map-gl';
 
-import {
-  clusterLayer,
-  clusterCountLayer,
-  unclusteredPointLayer,
-} from "./BookingsAndServicesMapLayers";
+import { clusterLayer, clusterCountLayer, unclusteredPointLayer } from './BookingsAndServicesMapLayers';
 
-import type { MapRef } from "react-map-gl";
-import type { GeoJSONSource } from "react-map-gl";
-import { componentStyles, fontStyles } from "../styles/styles";
-import { Stack, Typography } from "@mui/material";
+import type { MapRef } from 'react-map-gl';
+import type { GeoJSONSource } from 'react-map-gl';
+import { componentStyles, fontStyles } from '../styles/styles';
+import { Stack, Typography } from '@mui/material';
 
-const MAPBOX_TOKEN =
-  "pk.eyJ1IjoibWFubnk1NDQiLCJhIjoiY2xjdXVtMGpmMWRoZzN2bXhhbTlkcGowOSJ9.Fu7ZiZU-UhqDD2-Dnu7evg";
+const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFubnk1NDQiLCJhIjoiY2xjdXVtMGpmMWRoZzN2bXhhbTlkcGowOSJ9.Fu7ZiZU-UhqDD2-Dnu7evg';
 
 export default function BookingsAndServicesMap() {
   const mapRef = useRef<MapRef>(null);
@@ -22,9 +17,7 @@ export default function BookingsAndServicesMap() {
     const feature = event.features[0];
     const clusterId = feature.properties.cluster_id;
 
-    const mapboxSource = mapRef.current?.getSource(
-      "earthquakes"
-    ) as GeoJSONSource;
+    const mapboxSource = mapRef.current?.getSource('earthquakes') as GeoJSONSource;
 
     mapboxSource.getClusterExpansionZoom(clusterId, (err: any, zoom: any) => {
       if (err || !mapRef.current) {
@@ -34,7 +27,7 @@ export default function BookingsAndServicesMap() {
       mapRef.current.easeTo({
         center: feature.geometry.coordinates,
         zoom,
-        duration: 500,
+        duration: 500
       });
     });
   };
@@ -43,9 +36,9 @@ export default function BookingsAndServicesMap() {
     <Stack
       style={{
         ...componentStyles.cardGreyBackground,
-        width: "400px",
-        height: "400px",
-        justifyContent: "space-between",
+        width: '400px',
+        height: '400px',
+        justifyContent: 'space-between'
       }}
     >
       <Typography
@@ -53,26 +46,26 @@ export default function BookingsAndServicesMap() {
         style={{
           ...fontStyles.avenirBold,
           fontSize: 16,
-          marginBottom: "20px",
+          marginBottom: '20px'
         }}
       >
         Bookings by Farms and Acres Serviced
       </Typography>
       <Stack
         style={{
-          height: "350px",
-          justifyContent: "space-between",
+          height: '350px',
+          justifyContent: 'space-between'
         }}
       >
         <Map
           initialViewState={{
             latitude: 40.67,
             longitude: 0,
-            zoom: 0,
+            zoom: 0
           }}
           mapStyle="mapbox://styles/mapbox/light-v9"
           mapboxAccessToken={MAPBOX_TOKEN}
-          interactiveLayerIds={["clusters"]}
+          interactiveLayerIds={['clusters']}
           onClick={onClick}
           ref={mapRef}
         >

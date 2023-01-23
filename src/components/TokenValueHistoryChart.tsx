@@ -1,66 +1,57 @@
-import { Stack, Typography } from "@mui/material";
-import React, { useState } from "react";
-import {
-  AreaChart,
-  Area,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-  Label,
-} from "recharts";
-import { colors, componentStyles, fontStyles } from "../styles/styles";
-import TokenChartSelector from "./molecules/TokenChartSelector";
-import TokenDropDown from "./molecules/TokenDropDown";
+import { Stack, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
+import { colors, componentStyles, fontStyles } from '../styles/styles';
+import TokenChartSelector from './molecules/TokenChartSelector';
+import TokenDropDown from './molecules/TokenDropDown';
 
-import TokenGainOrLossView from "./molecules/TokenGainOrLossView";
+import TokenGainOrLossView from './molecules/TokenGainOrLossView';
 
 export interface Props {}
 
 const data = [
   {
-    name: "Jun",
+    name: 'Jun',
     uv: 4000,
 
-    amt: 2400,
+    amt: 2400
   },
   {
-    name: "Jul",
+    name: 'Jul',
     uv: 3000,
 
-    amt: 2210,
+    amt: 2210
   },
   {
-    name: "Aug",
+    name: 'Aug',
     uv: 2000,
 
-    amt: 2290,
+    amt: 2290
   },
   {
-    name: "Aug",
+    name: 'Aug',
     uv: 2780,
 
-    amt: 2000,
+    amt: 2000
   },
   {
-    name: "Sept",
+    name: 'Sept',
     uv: 1890,
 
-    amt: 2181,
+    amt: 2181
   },
   {
-    name: "Oct",
+    name: 'Oct',
     uv: 2390,
 
-    amt: 2500,
+    amt: 2500
   },
   {
-    name: "Nov",
+    name: 'Nov',
     uv: 3490,
 
-    amt: 2100,
-  },
+    amt: 2100
+  }
 ];
 const CustomTooltip = (
   input:
@@ -73,7 +64,7 @@ const CustomTooltip = (
 ) => {
   if (input.active && input.payload && input.payload.length) {
     return (
-      <Stack style={{ backgroundColor: "white", borderWidth: 0 }}>
+      <Stack style={{ backgroundColor: 'white', borderWidth: 0 }}>
         <div className="custom-tooltip">
           <Typography>{input.label} </Typography>
           <Typography>{input.payload[0].value}</Typography>
@@ -90,16 +81,16 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
     <Stack
       style={{
         ...componentStyles.cardGreyBackground,
-        width: "700px",
-        height: "395px",
+        width: '700px',
+        height: '395px'
       }}
     >
       <Stack
         style={{
-          flexDirection: "row",
-          justifyContent: "space-between",
-          alignItems: "center",
-          margin: "10px 30px",
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          margin: '10px 30px'
         }}
       >
         <TokenDropDown />
@@ -115,7 +106,7 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
             top: 10,
             right: 30,
             left: 0,
-            bottom: 0,
+            bottom: 0
           }}
         >
           <defs>
@@ -126,29 +117,19 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
           </defs>
 
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis
-            dataKey="name"
-            style={{ fontFamily: "AvenirLTStd", fontSize: "17px" }}
-            tickLine={false}
-            axisLine={false}
-          ></XAxis>
+          <XAxis dataKey="name" style={{ fontFamily: 'AvenirLTStd', fontSize: '17px' }} tickLine={false} axisLine={false}></XAxis>
           <YAxis
-            tickFormatter={(val) => "$" + val}
+            tickFormatter={(val) => '$' + val}
             style={{
-              fontFamily: "AvenirLTStdBold",
-              fontSize: "17px",
-              paddingRight: "80px",
+              fontFamily: 'AvenirLTStdBold',
+              fontSize: '17px',
+              paddingRight: '80px'
             }}
             tickLine={false}
             axisLine={false}
           ></YAxis>
           <Tooltip content={<CustomTooltip />} />
-          <Area
-            type="monotone"
-            dataKey="uv"
-            stroke={colors.primary}
-            fill="url(#colorUv)"
-          />
+          <Area type="monotone" dataKey="uv" stroke={colors.primary} fill="url(#colorUv)" />
         </AreaChart>
       </ResponsiveContainer>
     </Stack>

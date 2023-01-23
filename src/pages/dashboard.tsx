@@ -6,9 +6,9 @@ import TokenCardList from '../components/TokenCardList';
 import TokenValueHistoryChart from '../components/TokenValueHistoryChart';
 import { componentStyles } from '../styles/styles';
 
-export interface Props {}
+export interface DashboardProps {}
 
-const Dashboard: React.FC<Props> = (props) => {
+export const Dashboard: React.FC<DashboardProps> = (props) => {
   return (
     <Stack
       style={{
@@ -30,5 +30,3 @@ const Dashboard: React.FC<Props> = (props) => {
     </Stack>
   );
 };
-
-export default Dashboard;
