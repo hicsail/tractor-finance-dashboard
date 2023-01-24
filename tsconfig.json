@@ -25,7 +25,7 @@
       "@layouts/*": ["layouts/*"],
       "@modules/*": ["modules/*"],
       "@pages/*": ["pages/*"],
-      "@theme/*": ["theme/*"],
+      "@theme/*": ["theme/*"]
     }
   },
   "include": ["src"],

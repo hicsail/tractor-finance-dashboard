@@ -1,11 +1,12 @@
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import { ReactNode } from 'react';
-import Dashboard from '../pages/dashboard';
+
 import LeaderBoardIcon from '../assets/svgs/leaderBoardIcon.svg';
 import SupportIcon from '../assets/svgs/supportIcon.svg';
 import UserProfileIcon from '../assets/svgs/userProfileIcon.svg';
 import ReportsAndHistoryIcon from '../assets/svgs/reportsAndHistoryIcon.svg';
 import DashboardIcon from '../assets/svgs/dashboardIcon.svg';
+import { Dashboard } from '@pages/dashboard';
 
 export type RouteType = {
   element: ReactNode;
