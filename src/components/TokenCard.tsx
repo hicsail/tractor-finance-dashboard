@@ -25,11 +25,11 @@ const TokenCard: React.FC<Props> = (props) => {
           alignItems: 'center'
         }}
       >
-        <Typography style={fontStyles.avenirBold}>{props.token.name}</Typography>
+        <Typography style={{ ...fontStyles.avenirBold, color: colors.primary }}>{props.token.name}</Typography>
 
         <img src={GroupSolid} alt="GroupSolid SVG" />
       </Stack>
-      <Typography style={fontStyles.rooneyBold}>{props.token.value}</Typography>
+      <Typography style={fontStyles.rooneyBold}>${props.token.value}</Typography>
       <Stack
         style={{
           flexDirection: 'row',

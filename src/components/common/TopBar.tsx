@@ -19,7 +19,7 @@ const Topbar = () => {
         ml: sizes.sideBarWidth,
         boxShadow: 'unset',
         background: 'none',
-        height: '100px',
+        height: sizes.topBarHeight,
         justifyContent: 'center'
       }}
     >
