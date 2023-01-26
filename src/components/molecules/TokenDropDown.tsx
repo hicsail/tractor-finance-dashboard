@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
-import SelectUnstyled from '@mui/base/SelectUnstyled';
-import OptionUnstyled from '@mui/base/OptionUnstyled';
-import { FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from '@mui/material';
+import React from 'react';
+import { FormControl, MenuItem, Select, SelectChangeEvent } from '@mui/material';
 import DropDownIcon from '../../assets/svgs/dropDownIcon.svg';
+import { fontStyles } from '@styles/styles';
 
 export default function TokenDropDown() {
   const [age, setAge] = React.useState<string | number>(1);
@@ -30,22 +29,14 @@ export default function TokenDropDown() {
           onClose={handleClose}
           onOpen={handleOpen}
           value={age}
+          style={{ ...fontStyles.avenirRegular, color: 'black' }}
           onChange={handleChange}
-          //TODO style selector
           sx={{
-            color: 'white',
             '.MuiOutlinedInput-notchedOutline': {
-              borderColor: 'rgba(228, 219, 233, 0.25)',
               borderWidth: 0
             },
             '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'rgba(228, 219, 233, 0.25)'
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              borderColor: 'rgba(228, 219, 233, 0.25)'
-            },
-            '.MuiSvgIcon-root ': {
-              fill: 'white !important'
+              borderWidth: 0
             }
           }}
           IconComponent={() => <img src={DropDownIcon} alt="GroupSolid SVG" />}

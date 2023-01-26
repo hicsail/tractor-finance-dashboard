@@ -47,7 +47,7 @@ export default class BookingsAndServicesHistoryChart extends PureComponent {
     return (
       <Stack
         style={{
-          width: '700px',
+          width: '100%',
           height: '350px'
         }}
       >

@@ -81,8 +81,8 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
     <Stack
       style={{
         ...componentStyles.cardGreyBackground,
-        width: '700px',
-        height: '395px'
+        width: '100%',
+        height: '70%'
       }}
     >
       <Stack

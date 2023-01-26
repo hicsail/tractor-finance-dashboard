@@ -40,6 +40,7 @@ const componentStyles = {
   }
 };
 const sizes = {
-  sideBarWidth: '300px'
+  sideBarWidth: '300px',
+  topBarHeight: '100px'
 };
 export { colors, fontStyles, componentStyles, sizes };
