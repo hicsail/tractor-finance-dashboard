@@ -36,7 +36,7 @@ export default function BookingsAndServicesMap() {
     <Stack
       style={{
         ...componentStyles.cardGreyBackground,
-        width: '400px',
+        width: '100%',
         height: '400px',
         justifyContent: 'space-between'
       }}
