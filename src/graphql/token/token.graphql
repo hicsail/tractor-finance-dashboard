@@ -1,0 +1,18 @@
+query tokens {
+  tokens {
+    id
+    name
+    price
+    currentValue
+  }
+}
+query token {
+  token {
+    name
+    price
+    valueHistory {
+      value
+      date
+    }
+  }
+}

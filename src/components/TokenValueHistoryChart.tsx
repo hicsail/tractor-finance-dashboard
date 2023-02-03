@@ -1,58 +1,15 @@
 import { Stack, Typography } from '@mui/material';
-import React, { useState } from 'react';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Label } from 'recharts';
-import { colors, componentStyles, fontStyles } from '../styles/styles';
+import React from 'react';
+import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { colors, componentStyles } from '../styles/styles';
 import TokenChartSelector from './molecules/TokenChartSelector';
 import TokenDropDown from './molecules/TokenDropDown';
+import { useTokenQuery } from '@graphql/token/token';
 
 import TokenGainOrLossView from './molecules/TokenGainOrLossView';
 
 export interface Props {}
 
-const data = [
-  {
-    name: 'Jun',
-    uv: 4000,
-
-    amt: 2400
-  },
-  {
-    name: 'Jul',
-    uv: 3000,
-
-    amt: 2210
-  },
-  {
-    name: 'Aug',
-    uv: 2000,
-
-    amt: 2290
-  },
-  {
-    name: 'Aug',
-    uv: 2780,
-
-    amt: 2000
-  },
-  {
-    name: 'Sept',
-    uv: 1890,
-
-    amt: 2181
-  },
-  {
-    name: 'Oct',
-    uv: 2390,
-
-    amt: 2500
-  },
-  {
-    name: 'Nov',
-    uv: 3490,
-
-    amt: 2100
-  }
-];
 const CustomTooltip = (
   input:
     | {
@@ -76,7 +33,24 @@ const CustomTooltip = (
   return null;
 };
 
+/**
+ * formats valueHistory data to format best fit for AreaChart
+ * @param data
+ * @returns
+ */
+const getFormattedValueHistoryData = (data: { value: number; date: string }[]) => {
+  return data.map(({ value, date }) => {
+    return { month: new Date(date).getMonth(), value: value };
+  });
+};
+
 const TokenValueHistoryChart: React.FC<Props> = (props) => {
+  const { data } = useTokenQuery();
+
+  if (!data || !data.token) {
+    return <>Loading</>;
+  }
+
   return (
     <Stack
       style={{
@@ -101,7 +75,7 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
         <AreaChart
           width={500}
           height={400}
-          data={data}
+          data={getFormattedValueHistoryData(data.token.valueHistory)}
           margin={{
             top: 10,
             right: 30,
@@ -117,7 +91,7 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
           </defs>
 
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" style={{ fontFamily: 'AvenirLTStd', fontSize: '17px' }} tickLine={false} axisLine={false}></XAxis>
+          <XAxis dataKey="month" style={{ fontFamily: 'AvenirLTStd', fontSize: '17px' }} tickLine={false} axisLine={false}></XAxis>
           <YAxis
             tickFormatter={(val) => '$' + val}
             style={{
@@ -129,7 +103,7 @@ const TokenValueHistoryChart: React.FC<Props> = (props) => {
             axisLine={false}
           ></YAxis>
           <Tooltip content={<CustomTooltip />} />
-          <Area type="monotone" dataKey="uv" stroke={colors.primary} fill="url(#colorUv)" />
+          <Area type="monotone" dataKey="value" stroke={colors.primary} fill="url(#colorUv)" />
         </AreaChart>
       </ResponsiveContainer>
     </Stack>
