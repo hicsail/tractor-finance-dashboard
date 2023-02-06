@@ -3,79 +3,25 @@ import { Stack, Typography } from '@mui/material';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { fontStyles } from '../styles/styles';
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 590,
-    pv: 800,
-    amt: 1400
-  },
-  {
-    name: 'Page B',
-    uv: 868,
-    pv: 967,
-    amt: 1506
-  },
-  {
-    name: 'Page C',
-    uv: 1397,
-    pv: 1098,
-    amt: 989
-  },
-  {
-    name: 'Page D',
-    uv: 1480,
-    pv: 1200,
-    amt: 1228
-  },
-  {
-    name: 'Page E',
-    uv: 1520,
-    pv: 1108,
-    amt: 1100
-  },
-  {
-    name: 'Page F',
-    uv: 1400,
-    numServices: 680,
-    amt: 1700
-  }
-];
-export interface Props {}
-
 /**
  * formats valueHistory data to format best fit for AreaChart
  * @param data
  * @returns
  */
 const getFormattedValueHistoryData = (servicesData: { value: number; date: string }[], bookingsData: { value: number; date: string }[]) => {
-  console.log(
-    'history',
-    servicesData.map(({ value, date }, index) => {
-      console.log('date', date);
-
-      if (bookingsData.length > index) {
-        return { date: new Date(date).toDateString(), numServices: value, numBookings: bookingsData[index].value };
-      }
-    })
-  );
-
   return servicesData.map(({ value, date }, index) => {
     if (bookingsData.length > index) {
+      //replace(/^\S+\s/, '') removes day from date string
       return { date: new Date(date).toDateString().replace(/^\S+\s/, ''), numServices: value, numBookings: bookingsData[index].value };
     }
   });
 };
 
-const BookingsAndServicesHistoryChart: React.FC<Props> = (props) => {
+const BookingsAndServicesHistoryChart: React.FC = () => {
   const { data: servicesData } = useServicesQuery();
   const { data: bookingsData } = useBookingsQuery();
 
-  if (!servicesData || !servicesData.services) {
-    return <>Loading</>;
-  }
-
-  if (!bookingsData || !bookingsData.bookings) {
+  if (!servicesData || !servicesData.services || !bookingsData || !bookingsData.bookings) {
     return <>Loading</>;
   }
 
