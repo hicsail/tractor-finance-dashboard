@@ -108,7 +108,7 @@ export type Fake__Options = {
   /** Only for type `imageUrl` */
   imageSize?: InputMaybe<Fake__ImageSize>;
   /** Only for type `lorem` */
-  loremSize?: InputMaybe<fake__loremSize>;
+  loremSize?: InputMaybe<Fake__LoremSize>;
   /** Only for type `money` */
   maxMoney?: InputMaybe<Scalars['Float']>;
   /** Only for type `number` */
