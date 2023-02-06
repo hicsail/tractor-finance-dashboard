@@ -30,8 +30,7 @@ jobs:
       - name: Build & Push Docker Build
         uses: docker/build-push-action@v4
         with:
-          context: ./docker
-          file: Dockerfile-Frontend
+          file: ./docker/Dockerfile-Frontend
           push: ${{ github.event_name != 'pull_request' }}
           tags: hicsail/tractor-finance-dashboard:unstable
           cache-from: type=gha
