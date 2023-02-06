@@ -1,6 +1,5 @@
 import { useBookingsQuery, useServicesQuery } from '@graphql/history/history';
 import { Stack, Typography } from '@mui/material';
-import { PureComponent } from 'react';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { fontStyles } from '../styles/styles';
 
