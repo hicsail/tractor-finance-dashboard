@@ -2,6 +2,8 @@ type Query {
   me: User
   token: Token
   tokens : [Token]
+  bookings: Bookings,
+  services: Services
 }
 
 
@@ -23,6 +25,16 @@ type Token {
   	id: ID @fake(type: uuid)
     name : String @fake(type: fullName)
     price: Float @fake(type:money) 
-    currentValue : Float @fake(type:money)
+    amount : Float @fake(type:money)
     valueHistory: [History]
 }
+
+type Bookings {
+ history: [History]
+}
+
+
+type Services {
+ history: [History]
+}
+

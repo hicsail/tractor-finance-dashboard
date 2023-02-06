@@ -9,6 +9,8 @@ export interface Props {
 }
 
 const TokenCard: React.FC<Props> = (props) => {
+  console.log('token', props.token);
+
   return (
     <Stack
       style={{
@@ -29,7 +31,7 @@ const TokenCard: React.FC<Props> = (props) => {
 
         <img src={GroupSolid} alt="GroupSolid SVG" />
       </Stack>
-      <Typography style={fontStyles.rooneyBold}>${props.token.value}</Typography>
+      <Typography style={fontStyles.rooneyBold}>${props.token.price * props.token.amount}</Typography>
       <Stack
         style={{
           flexDirection: 'row',
@@ -49,7 +51,7 @@ const TokenCard: React.FC<Props> = (props) => {
           }}
         >
           <Typography style={fontStyles.avenirRegular}>Dec</Typography>
-          <Typography style={{ ...fontStyles.avenirBold, color: colors.green }}>{props.token.price}</Typography>
+          <Typography style={{ ...fontStyles.avenirBold, color: colors.green }}>${props.token.price}</Typography>
         </Stack>
       </Stack>
     </Stack>

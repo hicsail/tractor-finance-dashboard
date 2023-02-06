@@ -9,7 +9,7 @@ export type TokensQueryVariables = Types.Exact<{ [key: string]: never }>;
 
 export type TokensQuery = {
   __typename?: 'Query';
-  tokens?: Array<{ __typename?: 'Token'; id?: string | null; name?: string | null; price?: number | null; currentValue?: number | null } | null> | null;
+  tokens?: Array<{ __typename?: 'Token'; id?: string | null; name?: string | null; price?: number | null; amount?: number | null } | null> | null;
 };
 
 export type TokenQueryVariables = Types.Exact<{ [key: string]: never }>;
@@ -30,7 +30,7 @@ export const TokensDocument = gql`
       id
       name
       price
-      currentValue
+      amount
     }
   }
 `;

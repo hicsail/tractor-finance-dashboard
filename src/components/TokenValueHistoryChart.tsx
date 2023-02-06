@@ -40,7 +40,7 @@ const CustomTooltip = (
  */
 const getFormattedValueHistoryData = (data: { value: number; date: string }[]) => {
   return data.map(({ value, date }) => {
-    return { month: new Date(date).getMonth(), value: value };
+    return { month: new Date(date).toLocaleString('default', { month: 'short' }), value: value };
   });
 };
 

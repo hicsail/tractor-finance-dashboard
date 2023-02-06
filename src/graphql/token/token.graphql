@@ -3,7 +3,7 @@ query tokens {
     id
     name
     price
-    currentValue
+    amount
   }
 }
 query token {
