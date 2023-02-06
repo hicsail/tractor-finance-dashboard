@@ -21,7 +21,7 @@ jobs:
         uses: docker/build-push-action@v3
         if: github.ref != 'refs/heads/main'
         with:
-          context: {{defaultContext}}:docker
+          context: docker
           file: Dockerfile-Backend
           push: false
       - name: Login to Docker Hub
@@ -34,7 +34,7 @@ jobs:
         uses: docker/build-push-action@v4
         if: github.ref == 'refs/heads/main'
         with:
-          context: {{defaultContext}}:docker
+          context: docker
           file: Dockerfile-Backend
           push: true
           tags: hicsail/tractor-finance-dashboard-backend:unstable
