@@ -7,4 +7,5 @@ const generateRoute = (routes: RouteType[]): ReactNode => {
   return routes.map((route, index) => <Route index path={route.path} element={<PageWrapper state={route.state}>{route.element}</PageWrapper>} key={index} />);
 };
 
-export const routes: ReactNode = generateRoute(appRoutes);
+const routes: ReactNode = generateRoute(appRoutes);
+export default routes;

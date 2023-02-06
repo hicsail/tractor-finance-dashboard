@@ -1,5 +1,7 @@
+import { Stack } from '@mui/material';
 import { ReactNode, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { componentStyles, sizes } from '@styles/styles';
 import { setAppState } from '../../redux/features/appStateSlice';
 
 type Props = {
@@ -16,7 +18,11 @@ const PageWrapper = (props: Props) => {
     }
   }, [dispatch, props]);
 
-  return <>{props.children}</>;
+  return (
+    <Stack style={{ ...componentStyles.cardGreyBackground, marginTop: 15, padding: 30, backgroundColor: 'white', height: `calc(100% - ${sizes.topBarHeight} + 40px)` }}>
+      {props.children}
+    </Stack>
+  );
 };
 
 export default PageWrapper;

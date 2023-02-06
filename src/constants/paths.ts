@@ -1,6 +1,12 @@
 export enum Paths {
   Home = '/',
   Dashboard = '/dashboard',
+  FleetActivitySummary = '/fleet-and-activity-summary',
+  InvestmentPlans = '/investment-plans',
+  Leaderboard = '/leaderboard',
+  Login = '/login',
+  MarketPortfolio = '/market-portfolio',
   Profile = '/profile',
-  Login = '/login'
+  ReportsHistory = '/reports-and-history',
+  Support = '/support'
 }

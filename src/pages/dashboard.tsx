@@ -1,32 +1,27 @@
-import { Stack } from '@mui/material';
+import { Box, Grid, Stack } from '@mui/material';
 import React from 'react';
 import BookingsAndServicesHistoryChart from '../components/BookingsAndServicesHistoryChart';
 import BookingsAndServicesMap from '../components/BookingsAndServicesMap';
 import TokenCardList from '../components/TokenCardList';
 import TokenValueHistoryChart from '../components/TokenValueHistoryChart';
-import { componentStyles } from '../styles/styles';
 
 export interface DashboardProps {}
-
 export const Dashboard: React.FC<DashboardProps> = (props) => {
   return (
-    <Stack
-      style={{
-        ...componentStyles.cardGreyBackground,
-        backgroundColor: 'white',
-        flex: 1
-      }}
-    >
-      <Stack style={{ flexDirection: 'row', flex: 5 }}>
-        <Stack style={{ flex: 3 }}>
+    <Grid container width="100%">
+      <Grid xs={12} lg={8}>
+        <Stack style={{ marginRight: '30px', justifyContent: 'space-between', height: '100%' }}>
           <TokenCardList />
           <TokenValueHistoryChart />
         </Stack>
-        <Stack style={{ flex: 2 }}>
+      </Grid>
+      <Grid xs={12} lg={4}>
+        <Stack>
           <BookingsAndServicesHistoryChart />
+          <Box sx={{ height: '30px' }} />
           <BookingsAndServicesMap />
         </Stack>
-      </Stack>
-    </Stack>
+      </Grid>
+    </Grid>
   );
 };

@@ -7,6 +7,8 @@ import { SettingsProvider } from '@context/settings.context';
 import { Paths } from '@constants/paths';
 import { Profile } from '@pages/profile';
 import { AuthProvider } from '@context/auth.context';
+import MainLayout from '@components/layout/MainLayout';
+import routes from './routes';
 
 function App() {
   return (
@@ -16,9 +18,9 @@ function App() {
           <AuthProvider>
             <Router>
               <Routes>
-                <Route path={Paths.Profile} element={<Profile />} />
-                <Route path={Paths.Login} element={<Login />} />
-                <Route path={Paths.Home} element={<Dashboard />} />
+                <Route path={Paths.Home} element={<MainLayout />}>
+                  {routes}
+                </Route>
               </Routes>
             </Router>
           </AuthProvider>

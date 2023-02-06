@@ -1,16 +1,13 @@
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import { Stack } from '@mui/material';
 import { tokens } from '../data/sampleData';
 import TokenCard from './TokenCard';
 
 export default function TokenCardList() {
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      <ListItem alignItems="flex-start">
-        {tokens.map((token) => (
-          <TokenCard token={token} />
-        ))}
-      </ListItem>
-    </List>
+    <Stack style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
+      <TokenCard token={tokens[0]} />
+      <TokenCard token={tokens[1]} />
+      <TokenCard token={tokens[0]} />
+    </Stack>
   );
 }
