@@ -27,9 +27,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Push Docker Build
+      - name: Build & Push Docker Build
         uses: docker/build-push-action@v4
-        if: github.ref == 'refs/heads/main'
         with:
           context: ./docker
           file: Dockerfile-Frontend
