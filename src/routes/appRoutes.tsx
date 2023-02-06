@@ -10,6 +10,7 @@ import InvestmentPlansIcon from '../assets/svgs/investmentPlansIcon.svg';
 import MarketPortfolioIcon from '../assets/svgs/marketPortfolioIcon.svg';
 
 import { Dashboard } from '@pages/dashboard';
+import { Invest } from '@pages/invest';
 
 export type RouteType = {
   element: ReactNode;
@@ -45,7 +46,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: '/investment-plans',
-    element: <Dashboard />,
+    element: <Invest />,
     state: 'investment-plans',
     sidebarProps: {
       displayText: 'Investment plans',
