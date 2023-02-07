@@ -1,4 +1,4 @@
-import { useBookingsQuery, useServicesQuery } from '@graphql/history/history';
+import { useBookingsAndServicesQuery } from '@graphql/history/history';
 import { Stack, Typography } from '@mui/material';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { fontStyles } from '../styles/styles';
@@ -18,11 +18,14 @@ const getFormattedValueHistoryData = (servicesData: { value: number; date: strin
 };
 
 const BookingsAndServicesHistoryChart: React.FC = () => {
-  const { data: servicesData } = useServicesQuery();
-  const { data: bookingsData } = useBookingsQuery();
+  const { data } = useBookingsAndServicesQuery();
 
-  if (!servicesData || !servicesData.services || !bookingsData || !bookingsData.bookings) {
+  if (!data || !data.bookingsAndServices) {
     return <>Loading</>;
+  }
+
+  if (!data.bookingsAndServices.bookings || !data.bookingsAndServices.services) {
+    return <>No data found</>;
   }
 
   return (
@@ -46,7 +49,7 @@ const BookingsAndServicesHistoryChart: React.FC = () => {
         <ComposedChart
           width={380}
           height={300}
-          data={getFormattedValueHistoryData(servicesData.services.history, bookingsData.bookings.history)}
+          data={getFormattedValueHistoryData(data.bookingsAndServices.bookings.history, data.bookingsAndServices.services.history)}
           margin={{
             top: 20,
             right: 80,

@@ -3,7 +3,8 @@ type Query {
   token: Token
   tokens : [Token]
   bookings: Bookings,
-  services: Services
+  services: Services,
+  bookingsAndServices:BookingsAndServices
 }
 
 
@@ -38,3 +39,7 @@ type Services {
  history: [History]
 }
 
+type BookingsAndServices {
+  bookings: Bookings
+  services: Services
+}

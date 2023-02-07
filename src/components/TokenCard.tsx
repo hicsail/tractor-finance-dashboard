@@ -9,8 +9,6 @@ export interface Props {
 }
 
 const TokenCard: React.FC<Props> = (props) => {
-  console.log('token', props.token);
-
   return (
     <Stack
       style={{
