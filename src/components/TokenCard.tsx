@@ -3,7 +3,7 @@ import React from 'react';
 import { colors, componentStyles, fontStyles } from '../styles/styles';
 import PositiveTrendLine from '../assets/svgs/positiveTrendLine.svg';
 import GroupSolid from '../assets/svgs/groupSolid.svg';
-import { tokenToString } from 'typescript';
+
 export interface Props {
   token: any;
 }
@@ -29,7 +29,7 @@ const TokenCard: React.FC<Props> = (props) => {
 
         <img src={GroupSolid} alt="GroupSolid SVG" />
       </Stack>
-      <Typography style={fontStyles.rooneyBold}>${props.token.value}</Typography>
+      <Typography style={fontStyles.rooneyBold}>${props.token.price * props.token.amount}</Typography>
       <Stack
         style={{
           flexDirection: 'row',
@@ -49,7 +49,7 @@ const TokenCard: React.FC<Props> = (props) => {
           }}
         >
           <Typography style={fontStyles.avenirRegular}>Dec</Typography>
-          <Typography style={{ ...fontStyles.avenirBold, color: colors.green }}>{props.token.price}</Typography>
+          <Typography style={{ ...fontStyles.avenirBold, color: colors.green }}>${props.token.price}</Typography>
         </Stack>
       </Stack>
     </Stack>

@@ -1,13 +1,20 @@
 import { Stack } from '@mui/material';
 import { tokens } from '../data/sampleData';
 import TokenCard from './TokenCard';
+import { useTokensQuery } from '@graphql/token/token';
 
 export default function TokenCardList() {
+  const { data } = useTokensQuery();
+
+  if (!data || !data.tokens) {
+    return <>Loading</>;
+  }
+
   return (
     <Stack style={{ justifyContent: 'space-between', flexDirection: 'row' }}>
-      <TokenCard token={tokens[0]} />
-      <TokenCard token={tokens[1]} />
-      <TokenCard token={tokens[0]} />
+      {data.tokens.map((t, i) => (
+        <TokenCard token={t} key={i.toString()} />
+      ))}
     </Stack>
   );
 }
