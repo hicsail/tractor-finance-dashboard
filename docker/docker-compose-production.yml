@@ -1,0 +1,12 @@
+version: '3'
+services:
+  backend:
+    image: hicsail/tractor-finance-dashboard-backend:latest
+    restart: always
+    ports:
+      - 4002:9002
+  frontend:
+    image: hicsail/tractor-finance-dashboard:latest
+    restart: always
+    ports:
+      - 4000:80
