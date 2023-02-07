@@ -1,23 +1,33 @@
 import FinancingForm from '@components/FinancingForm';
+import FinancingSteps from '@components/FinancingSteps';
 import TractorFinancingCard from '@components/TractorFinancingCard';
-import { Grid, Stack } from '@mui/material';
+import { Box, Divider, Grid, Stack, Typography } from '@mui/material';
+import { fontStyles, colors } from '@styles/styles';
 import React from 'react';
 
 export const Invest: React.FC = () => {
   return (
-    <Grid container width="100%" height="100%">
-      <Grid xs={12} lg={6}>
-        <Stack style={{ marginRight: '30px', justifyContent: 'space-between', height: '100%' }}>
-          <TractorFinancingCard />
-          <Stack style={{ height: '20px' }} />
-          <TractorFinancingCard />
-        </Stack>
+    <Stack>
+      <Stack style={{ width: '45%' }}>
+        <FinancingSteps />
+      </Stack>
+
+      <Grid container width="100%" height="100%">
+        <Grid xs={12} lg={6} item>
+          <Stack style={{ alignItems: 'center', justifyContent: 'space-between', height: '100%', margin: '70px 70px' }}>
+            <Typography style={{ ...fontStyles.rooneyBold, color: colors.primary, fontSize: '20px', textAlign: 'left' }}>Fixed Financing</Typography>
+            <TractorFinancingCard />
+            <Stack style={{ height: '20px' }} />
+            <TractorFinancingCard />
+          </Stack>
+        </Grid>
+        <Divider orientation="vertical" flexItem sx={{ mr: '-1px' }} />
+        <Grid xs={12} lg={6} item>
+          <Stack style={{ height: '100%', margin: '70px 70px' }}>
+            <FinancingForm />
+          </Stack>
+        </Grid>
       </Grid>
-      <Grid xs={12} lg={6}>
-        <Stack style={{ height: '100%' }}>
-          <FinancingForm />
-        </Stack>
-      </Grid>
-    </Grid>
+    </Stack>
   );
 };
