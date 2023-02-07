@@ -1,0 +1,16 @@
+query bookingsAndServices {
+  bookingsAndServices {
+    bookings {
+      history {
+        value
+        date
+      }
+    }
+    services {
+      history {
+        value
+        date
+      }
+    }
+  }
+}
