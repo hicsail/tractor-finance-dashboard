@@ -1,16 +1,17 @@
-import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import { ReactNode } from 'react';
 
-import LeaderBoardIcon from '../assets/svgs/leaderBoardIcon.svg';
-import SupportIcon from '../assets/svgs/supportIcon.svg';
-import UserProfileIcon from '../assets/svgs/userProfileIcon.svg';
-import ReportsAndHistoryIcon from '../assets/svgs/reportsAndHistoryIcon.svg';
-import DashboardIcon from '../assets/svgs/dashboardIcon.svg';
-import InvestmentPlansIcon from '../assets/svgs/investmentPlansIcon.svg';
-import MarketPortfolioIcon from '../assets/svgs/marketPortfolioIcon.svg';
+import LeaderBoardIcon from '@assets/svgs/leaderBoardIcon.svg';
+import SupportIcon from '@assets/svgs/supportIcon.svg';
+import UserProfileIcon from '@assets/svgs/userProfileIcon.svg';
+import ReportsAndHistoryIcon from '@assets/svgs/reportsAndHistoryIcon.svg';
+import DashboardIcon from '@assets/svgs/dashboardIcon.svg';
+import InvestmentPlansIcon from '@assets/svgs/investmentPlansIcon.svg';
+import MarketPortfolioIcon from '@assets/svgs/marketPortfolioIcon.svg';
 
 import { Dashboard } from '@pages/dashboard';
 import { Invest } from '@pages/invest';
+import { Paths } from '@constants/paths';
+import { Profile } from '@pages/profile';
 
 export type RouteType = {
   element: ReactNode;
@@ -27,7 +28,7 @@ export type RouteType = {
 const appRoutes: RouteType[] = [
   {
     index: true,
-    path: '/dashboard',
+    path: Paths.Dashboard,
     element: <Dashboard />,
     state: 'dashboard',
     sidebarProps: {
@@ -36,7 +37,7 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/market-portfolio',
+    path: Paths.MarketPortfolio,
     element: <Dashboard />,
     state: 'market-portfolio',
     sidebarProps: {
@@ -45,7 +46,7 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/investment-plans',
+    path: Paths.InvestmentPlans,
     element: <Invest />,
     state: 'investment-plans',
     sidebarProps: {
@@ -54,7 +55,7 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/leaderboard',
+    path: Paths.Leaderboard,
     element: <Dashboard />,
     state: 'leaderboard',
     sidebarProps: {
@@ -63,7 +64,7 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/reports-and-history',
+    path: Paths.ReportsHistory,
     element: <Dashboard />,
     state: 'reports-and-history',
     sidebarProps: {
@@ -72,7 +73,7 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/fleet-and-activity-summary',
+    path: Paths.FleetActivitySummary,
     element: <Dashboard />,
     state: 'fleet-and-activity-summary',
     sidebarProps: {
@@ -81,8 +82,8 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/profile',
-    element: <Dashboard />,
+    path: Paths.Profile,
+    element: <Profile />,
     state: 'profile',
     sidebarProps: {
       displayText: 'Profile',
@@ -90,7 +91,7 @@ const appRoutes: RouteType[] = [
     }
   },
   {
-    path: '/support',
+    path: Paths.Support,
     element: <Dashboard />,
     state: 'support',
     sidebarProps: {

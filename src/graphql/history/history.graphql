@@ -1,17 +1,16 @@
-query services {
-  services {
-    history {
-      value
-      date
+query bookingsAndServices {
+  bookingsAndServices {
+    bookings {
+      history {
+        value
+        date
+      }
     }
-  }
-}
-
-query bookings {
-  bookings {
-    history {
-      value
-      date
+    services {
+      history {
+        value
+        date
+      }
     }
   }
 }

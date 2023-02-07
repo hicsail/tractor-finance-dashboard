@@ -18,6 +18,7 @@ export type Scalars = {
 export type Query = {
   __typename?: 'Query';
   bookings?: Maybe<Bookings>;
+  bookingsAndServices?: Maybe<BookingsAndServices>;
   me?: Maybe<User>;
   services?: Maybe<Services>;
   token?: Maybe<Token>;
@@ -35,6 +36,17 @@ export type History = {
   value?: Maybe<Scalars['Float']>;
 };
 
+export type BookingsAndServices = {
+  __typename?: 'BookingsAndServices';
+  bookings?: Maybe<Bookings>;
+  services?: Maybe<Services>;
+};
+
+export type Services = {
+  __typename?: 'Services';
+  history?: Maybe<Array<Maybe<History>>>;
+};
+
 export type User = {
   __typename?: 'User';
   email?: Maybe<Scalars['String']>;
@@ -43,11 +55,6 @@ export type User = {
   phone?: Maybe<Scalars['String']>;
   photo?: Maybe<Scalars['String']>;
   referralCode?: Maybe<Scalars['String']>;
-};
-
-export type Services = {
-  __typename?: 'Services';
-  history?: Maybe<Array<Maybe<History>>>;
 };
 
 export type Token = {

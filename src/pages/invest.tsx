@@ -1,7 +1,6 @@
 import FinancingForm from '@components/FinancingForm';
 import TractorFinancingCard from '@components/TractorFinancingCard';
-import { Button, Grid, Stack, Typography } from '@mui/material';
-import { colors, fontStyles } from '@styles/styles';
+import { Grid, Stack } from '@mui/material';
 import React from 'react';
 
 export const Invest: React.FC = () => {

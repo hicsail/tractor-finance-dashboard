@@ -1,40 +1,43 @@
 type Query {
   me: User
   token: Token
-  tokens : [Token]
-  bookings: Bookings,
+  tokens: [Token]
+  bookings: Bookings
   services: Services
+  bookingsAndServices: BookingsAndServices
 }
-
 
 type User {
   id: ID @fake(type: uuid)
   name: String @fake(type: fullName)
   email: String @fake(type: email)
-  phone: String @fake(type: phoneNumber)
-  referralCode: String @fake(type: number, options: {  minNumber: 1000000, maxNumber: 9999999 })
-  photo: String @fake(type: imageUrl, options:{ imageKeywords: "headshot" })
+  phone: String @fake(type: phoneNumber, locale: "en_GH")
+  referralCode: String @fake(type: number, options: { minNumber: 1000000, maxNumber: 9999999 })
+  photo: String @fake(type: imageUrl, options: { imageKeywords: "headshot" })
 }
 
 type History {
-  date : String @fake(type: date, options: {dateFrom: "2022-01-01", dateTo: "2022-02-28"})
-  value: Float @fake(type:money)
+  date: String @fake(type: date, options: { dateFrom: "2022-01-01", dateTo: "2022-02-28" })
+  value: Float @fake(type: money)
 }
 
 type Token {
-  	id: ID @fake(type: uuid)
-    name : String @fake(type: fullName)
-    price: Float @fake(type:money) 
-    amount : Float @fake(type:money)
-    valueHistory: [History]
+  id: ID @fake(type: uuid)
+  name: String @fake(type: fullName)
+  price: Float @fake(type: money)
+  amount: Float @fake(type: money)
+  valueHistory: [History]
 }
 
 type Bookings {
- history: [History]
+  history: [History]
 }
-
 
 type Services {
- history: [History]
+  history: [History]
 }
 
+type BookingsAndServices {
+  bookings: Bookings
+  services: Services
+}
