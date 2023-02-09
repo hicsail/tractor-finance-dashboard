@@ -11,8 +11,8 @@ export type BookingsAndServicesQuery = {
   __typename?: 'Query';
   bookingsAndServices?: {
     __typename?: 'BookingsAndServices';
-    bookings?: { __typename?: 'Bookings'; history?: Array<{ __typename?: 'History'; value?: number | null; date?: string | null } | null> | null } | null;
-    services?: { __typename?: 'Services'; history?: Array<{ __typename?: 'History'; value?: number | null; date?: string | null } | null> | null } | null;
+    bookings: { __typename?: 'Bookings'; history: Array<{ __typename?: 'History'; value: number; date: string }> };
+    services: { __typename?: 'Services'; history: Array<{ __typename?: 'History'; value: number; date: string }> };
   } | null;
 };
 

@@ -9,6 +9,7 @@ import InvestmentPlansIcon from '@assets/svgs/investmentPlansIcon.svg';
 import MarketPortfolioIcon from '@assets/svgs/marketPortfolioIcon.svg';
 
 import { Dashboard } from '@pages/dashboard';
+import { Invest } from '@pages/invest';
 import { Paths } from '@constants/paths';
 import { Profile } from '@pages/profile';
 
@@ -46,7 +47,7 @@ const appRoutes: RouteType[] = [
   },
   {
     path: Paths.InvestmentPlans,
-    element: <Dashboard />,
+    element: <Invest />,
     state: 'investment-plans',
     sidebarProps: {
       displayText: 'Investment plans',

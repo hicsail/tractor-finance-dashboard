@@ -21,30 +21,30 @@ export type Query = {
   bookingsAndServices?: Maybe<BookingsAndServices>;
   me?: Maybe<User>;
   services?: Maybe<Services>;
-  token?: Maybe<Token>;
+  token: Token;
   tokens?: Maybe<Array<Maybe<Token>>>;
 };
 
 export type Bookings = {
   __typename?: 'Bookings';
-  history?: Maybe<Array<Maybe<History>>>;
+  history: Array<History>;
 };
 
 export type History = {
   __typename?: 'History';
-  date?: Maybe<Scalars['String']>;
-  value?: Maybe<Scalars['Float']>;
+  date: Scalars['String'];
+  value: Scalars['Float'];
 };
 
 export type BookingsAndServices = {
   __typename?: 'BookingsAndServices';
-  bookings?: Maybe<Bookings>;
-  services?: Maybe<Services>;
+  bookings: Bookings;
+  services: Services;
 };
 
 export type Services = {
   __typename?: 'Services';
-  history?: Maybe<Array<Maybe<History>>>;
+  history: Array<History>;
 };
 
 export type User = {
@@ -63,7 +63,7 @@ export type Token = {
   id?: Maybe<Scalars['ID']>;
   name?: Maybe<Scalars['String']>;
   price?: Maybe<Scalars['Float']>;
-  valueHistory?: Maybe<Array<Maybe<History>>>;
+  valueHistory: Array<History>;
 };
 
 export type Fake__Color = {

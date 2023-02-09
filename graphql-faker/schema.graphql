@@ -1,6 +1,6 @@
 type Query {
   me: User
-  token: Token
+  token: Token!
   tokens : [Token]
   bookings: Bookings,
   services: Services,
@@ -18,28 +18,28 @@ type User {
 }
 
 type History {
-  date : String @fake(type: date, options: {dateFrom: "2022-01-01", dateTo: "2022-02-28"})
-  value: Float @fake(type:money)
+  date: String! @fake(type: date, options: {dateFrom: "2022-01-01", dateTo: "2022-02-28"})
+  value: Float! @fake(type:money)
 }
 
 type Token {
   	id: ID @fake(type: uuid)
     name : String @fake(type: fullName)
-    price: Float @fake(type:money)
+    price: Float @fake(type:money) 
     amount : Float @fake(type:money)
-    valueHistory: [History]
+    valueHistory: [History!]!
 }
 
 type Bookings {
- history: [History]
+ history: [History!]!
 }
 
 
 type Services {
- history: [History]
+ history: [History!]!
 }
 
 type BookingsAndServices {
-  bookings: Bookings
-  services: Services
+  bookings: Bookings!
+  services: Services!
 }

@@ -1,5 +1,4 @@
 import { Stack } from '@mui/material';
-import { tokens } from '../data/sampleData';
 import TokenCard from './TokenCard';
 import { useTokensQuery } from '@graphql/token/token';
 

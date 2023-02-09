@@ -1,12 +1,11 @@
 import { Stack, Typography } from '@mui/material';
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { colors, componentStyles } from '../styles/styles';
-import TokenChartSelector from './molecules/TokenChartSelector';
-import TokenDropDown from './molecules/TokenDropDown';
+import { colors, componentStyles } from '@styles/styles';
 import { useTokenQuery } from '@graphql/token/token';
-
-import TokenGainOrLossView from './molecules/TokenGainOrLossView';
+import TokenChartSelector from '@components/molecules/TokenChartSelector';
+import TokenDropDown from '@components/molecules/TokenDropDown';
+import TokenGainOrLossView from '@components/molecules/TokenGainOrLossView';
 
 export interface Props {}
 

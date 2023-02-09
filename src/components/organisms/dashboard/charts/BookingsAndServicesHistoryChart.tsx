@@ -1,7 +1,7 @@
 import { useBookingsAndServicesQuery } from '@graphql/history/history';
 import { Stack, Typography } from '@mui/material';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { fontStyles } from '../styles/styles';
+import { fontStyles } from '@styles/styles';
 
 /**
  * formats valueHistory data to format best fit for AreaChart
@@ -49,7 +49,7 @@ const BookingsAndServicesHistoryChart: React.FC = () => {
         <ComposedChart
           width={380}
           height={300}
-          data={getFormattedValueHistoryData(data.bookingsAndServices.bookings.history, data.bookingsAndServices.services.history)}
+          data={getFormattedValueHistoryData(data.bookingsAndServices.services.history, data.bookingsAndServices.bookings.history)}
           margin={{
             top: 20,
             right: 80,
