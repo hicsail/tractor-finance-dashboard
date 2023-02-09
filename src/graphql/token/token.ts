@@ -16,12 +16,7 @@ export type TokenQueryVariables = Types.Exact<{ [key: string]: never }>;
 
 export type TokenQuery = {
   __typename?: 'Query';
-  token?: {
-    __typename?: 'Token';
-    name?: string | null;
-    price?: number | null;
-    valueHistory?: Array<{ __typename?: 'History'; value?: number | null; date?: string | null } | null> | null;
-  } | null;
+  token: { __typename?: 'Token'; name?: string | null; price?: number | null; valueHistory: Array<{ __typename?: 'History'; value: number; date: string }> };
 };
 
 export const TokensDocument = gql`

@@ -49,7 +49,7 @@ const BookingsAndServicesHistoryChart: React.FC = () => {
         <ComposedChart
           width={380}
           height={300}
-          data={getFormattedValueHistoryData(data.bookingsAndServices.bookings.history, data.bookingsAndServices.services.history)}
+          data={getFormattedValueHistoryData(data.bookingsAndServices.services.history, data.bookingsAndServices.bookings.history)}
           margin={{
             top: 20,
             right: 80,
