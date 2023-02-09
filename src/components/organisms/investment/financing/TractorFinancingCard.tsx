@@ -1,6 +1,6 @@
 import { Button, Stack, Typography } from '@mui/material';
 import React from 'react';
-import { colors, componentStyles, fontStyles } from '../styles/styles';
+import { colors, componentStyles, fontStyles } from '@styles/styles';
 import NewHolland from '../assets/svgs/newHolland.svg';
 
 export interface Props {}

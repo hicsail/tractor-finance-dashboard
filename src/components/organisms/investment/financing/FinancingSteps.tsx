@@ -2,8 +2,6 @@ import { Stack } from '@mui/material';
 import React from 'react';
 import FinancingStep from './FinancingStep';
 
-const TAG = 'FinancingSteps.tsx ';
-
 const renderBorder = () => {
   return (
     <Stack

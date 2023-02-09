@@ -1,7 +1,7 @@
 import { useBookingsAndServicesQuery } from '@graphql/history/history';
 import { Stack, Typography } from '@mui/material';
 import { ComposedChart, Line, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-import { fontStyles } from '../styles/styles';
+import { fontStyles } from '@styles/styles';
 
 /**
  * formats valueHistory data to format best fit for AreaChart

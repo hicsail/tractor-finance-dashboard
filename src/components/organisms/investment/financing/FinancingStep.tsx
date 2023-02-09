@@ -7,8 +7,6 @@ export interface Props {
   stepNumber: number;
 }
 
-const TAG = 'FinancingStep.tsx ';
-
 const FinancingStep: React.FC<Props> = (props) => {
   return (
     <Stack

@@ -1,6 +1,6 @@
 import { Button, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent, Stack, TextField, Typography } from '@mui/material';
 import React from 'react';
-import { colors, fontStyles } from '../styles/styles';
+import { colors, fontStyles } from '../../../../styles/styles';
 
 export interface Props {}
 

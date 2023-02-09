@@ -3,8 +3,6 @@ import { colors, componentStyles, fontStyles } from '@styles/styles';
 import React from 'react';
 import Tafe from '../assets/svgs/tafe.svg';
 
-const TAG = 'TractorDetailsCard.tsx ';
-
 const bulltetItemStyle = {
   ...fontStyles.avenirRegular,
   fontSize: '16px',

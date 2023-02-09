@@ -2,8 +2,6 @@ import { Button, Stack, Typography } from '@mui/material';
 import { colors, fontStyles } from '@styles/styles';
 import React from 'react';
 
-const TAG = 'FixedFinancingDetails.tsx ';
-
 const InvestmentStatus: React.FC = () => {
   return (
     <Stack

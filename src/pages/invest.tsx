@@ -1,7 +1,4 @@
-import FinancingOptionsView from '@components/organisms/FinancingOptionsView';
-import FixedFinancingView from '@components/organisms/FixedFinancingView';
-import PaymentOptionsView from '@components/organisms/PaymentOptionsView';
-import SuccessfulTransactionView from '@components/organisms/SuccessfulTransactionView';
+import SuccessfulTransactionView from '@components/organisms/investment/payment/SuccessfulTransactionView';
 import { Stack } from '@mui/material';
 import React from 'react';
 

@@ -6,8 +6,6 @@ import BankTransferIcon from '@assets/svgs/bankTransferIcon.svg';
 import MobileWalletIcon from '@assets/svgs/mobileWalletIcon.svg';
 import BitcoinIcon from '@assets/svgs/bitcoinIcon.svg';
 
-const TAG = 'PaymentOptionsView.tsx ';
-
 const PaymentOptionToggleButtons: React.FC<{ selected: number }> = (props) => {
   const buttonStyle = {
     width: 160,

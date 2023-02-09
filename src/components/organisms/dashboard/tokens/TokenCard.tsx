@@ -1,6 +1,6 @@
 import { Stack, Typography } from '@mui/material';
 import React from 'react';
-import { colors, componentStyles, fontStyles } from '../styles/styles';
+import { colors, componentStyles, fontStyles } from '../../../../styles/styles';
 import PositiveTrendLine from '../assets/svgs/positiveTrendLine.svg';
 import GroupSolid from '../assets/svgs/groupSolid.svg';
 
@@ -9,8 +9,6 @@ export interface Props {
 }
 
 const TokenCard: React.FC<Props> = (props) => {
-  console.log('token', props.token);
-
   return (
     <Stack
       style={{

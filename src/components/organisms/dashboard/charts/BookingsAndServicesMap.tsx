@@ -5,7 +5,7 @@ import { clusterLayer, clusterCountLayer, unclusteredPointLayer } from './Bookin
 
 import type { MapRef } from 'react-map-gl';
 import type { GeoJSONSource } from 'react-map-gl';
-import { componentStyles, fontStyles } from '../styles/styles';
+import { componentStyles, fontStyles } from '@styles/styles';
 import { Stack, Typography } from '@mui/material';
 
 const MAPBOX_TOKEN = 'pk.eyJ1IjoibWFubnk1NDQiLCJhIjoiY2xjdXVtMGpmMWRoZzN2bXhhbTlkcGowOSJ9.Fu7ZiZU-UhqDD2-Dnu7evg';

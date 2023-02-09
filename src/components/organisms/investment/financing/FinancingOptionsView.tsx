@@ -1,11 +1,10 @@
-import FinancingForm from '@components/FinancingForm';
-import FinancingSteps from '@components/FinancingSteps';
-import TractorFinancingCard from '@components/TractorFinancingCard';
+import FinancingForm from '@components/organisms/investment/financing/FinancingForm';
 import { Divider, Grid, Stack, Typography } from '@mui/material';
 import { colors, fontStyles } from '@styles/styles';
 import React from 'react';
+import FinancingSteps from './FinancingSteps';
+import TractorFinancingCard from './TractorFinancingCard';
 
-const TAG = 'FinancingOptionsView.tsx ';
 const FinancingOptionsView: React.FC = () => {
   return (
     <Stack>

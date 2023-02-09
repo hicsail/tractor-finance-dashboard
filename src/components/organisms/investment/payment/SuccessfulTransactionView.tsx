@@ -1,14 +1,14 @@
-import { Button, Divider, Stack, Typography } from '@mui/material';
+import { Divider, Stack, Typography } from '@mui/material';
 import React from 'react';
 import SuccessIcon from '@assets/svgs/successCheckMarkIcon.svg';
 import { colors, componentStyles, fontStyles } from '@styles/styles';
 import UnderlinedTextButton from '@components/atoms/UnderlinedTextButton';
-
-const TAG = 'SuccessfulTransactionView.tsx ';
+import Confetti from 'react-confetti';
 
 const SuccessfulTransactionView: React.FC = () => {
   return (
     <Stack style={{ alignItems: 'center' }}>
+      <Confetti />
       <img src={SuccessIcon} alt="success SVG" style={{ width: 100, height: 100 }} />
       <Stack style={{ height: 50 }} />
       <Stack style={{ ...componentStyles.cardGreyBackground, width: 440, height: 430, padding: 30, justifyContent: 'space-between' }}>

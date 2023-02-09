@@ -1,9 +1,7 @@
-import FixedFinancingDetails from '@components/FixedFinancingDetails';
-import TractorDetailsCard from '@components/TractorDetailsCard';
+import TractorDetailsCard from '@components/organisms/investment/financing/TractorDetailsCard';
 import { Grid } from '@mui/material';
 import React from 'react';
-
-const TAG = 'FixedFinancingView.tsx ';
+import FixedFinancingDetails from './FixedFinancingDetails';
 
 const FixedFinancingView: React.FC = () => {
   return (
