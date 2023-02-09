@@ -1,7 +1,7 @@
 import { List, ListItem, Stack, Typography } from '@mui/material';
 import { colors, componentStyles, fontStyles } from '@styles/styles';
 import React from 'react';
-import Tafe from '../assets/svgs/tafe.svg';
+import Tafe from '@assets/svgs/tafe.svg';
 
 const bulltetItemStyle = {
   ...fontStyles.avenirRegular,

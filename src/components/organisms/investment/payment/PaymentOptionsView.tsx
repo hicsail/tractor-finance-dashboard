@@ -181,7 +181,7 @@ const FiatPaymentOptionsForm: React.FC = () => {
 const PaymentOptionsView: React.FC = () => {
   return (
     <Stack>
-      <PaymentOptionToggleButtons selected={2} />
+      <PaymentOptionToggleButtons selected={1} />
       <Stack style={{ height: 50 }} />
       <Grid container width="100%">
         <Grid xs={12} lg={6} item>

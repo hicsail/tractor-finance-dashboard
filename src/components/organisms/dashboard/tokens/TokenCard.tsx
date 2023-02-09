@@ -1,8 +1,8 @@
 import { Stack, Typography } from '@mui/material';
 import React from 'react';
-import { colors, componentStyles, fontStyles } from '../../../../styles/styles';
-import PositiveTrendLine from '../assets/svgs/positiveTrendLine.svg';
-import GroupSolid from '../assets/svgs/groupSolid.svg';
+import { colors, componentStyles, fontStyles } from '@styles/styles';
+import PositiveTrendLine from '@assets/svgs/positiveTrendLine.svg';
+import GroupSolid from '@assets/svgs/groupSolid.svg';
 
 export interface Props {
   token: any;

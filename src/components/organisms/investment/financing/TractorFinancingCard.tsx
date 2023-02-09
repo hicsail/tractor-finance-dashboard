@@ -1,9 +1,10 @@
 import { Button, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { colors, componentStyles, fontStyles } from '@styles/styles';
-import NewHolland from '../assets/svgs/newHolland.svg';
 
-export interface Props {}
+export interface Props {
+  tractorImage: string;
+}
 
 const TractorFinancingCard: React.FC<Props> = (props) => {
   return (
@@ -23,7 +24,7 @@ const TractorFinancingCard: React.FC<Props> = (props) => {
           position: 'relative'
         }}
       >
-        <img src={NewHolland} alt="GroupSolid SVG" style={{ position: 'absolute', left: '-60px' }} />
+        <img src={props.tractorImage} alt="GroupSolid SVG" style={{ position: 'absolute', left: '-60px' }} />
         <Stack
           style={{
             alignSelf: 'flex-end'
@@ -38,7 +39,7 @@ const TractorFinancingCard: React.FC<Props> = (props) => {
           >
             <Typography style={{ ...fontStyles.avenirBold, fontSize: '16px', color: 'black' }}>$3000</Typography>
             <Typography> &nbsp;</Typography>
-            <Typography style={{ ...fontStyles.avenirRegular, fontSize: '16px', color: 'black' }}> Invested</Typography>
+            <Typography style={{ ...fontStyles.avenirRegular, fontSize: '16px', color: 'black' }}>Invested</Typography>
           </Stack>
           <Stack style={{ height: '5px' }} />
           <Stack
