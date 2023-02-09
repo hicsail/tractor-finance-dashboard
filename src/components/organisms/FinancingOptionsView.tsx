@@ -1,8 +1,8 @@
 import FinancingForm from '@components/FinancingForm';
 import FinancingSteps from '@components/FinancingSteps';
 import TractorFinancingCard from '@components/TractorFinancingCard';
-import { colors, Divider, Grid, Stack, Typography } from '@mui/material';
-import { fontStyles } from '@styles/styles';
+import { Divider, Grid, Stack, Typography } from '@mui/material';
+import { colors, fontStyles } from '@styles/styles';
 import React from 'react';
 
 const TAG = 'FinancingOptionsView.tsx ';
